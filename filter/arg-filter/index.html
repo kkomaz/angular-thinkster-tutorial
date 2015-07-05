@@ -11,6 +11,7 @@
     <input type="text" ng-model="letter">
     <ul>
       <li ng-repeat="friend in person.friends | startswithLetter: letter">
+      <!-- {{ expression | filter:argument1:argument2:... }} -->
         {{ friend }}
       </li>
     </ul>

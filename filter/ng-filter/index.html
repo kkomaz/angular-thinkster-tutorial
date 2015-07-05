@@ -10,6 +10,7 @@
   <div ng-controller="TestCtrl as test">
     <input type="text" ng-model="search">
     <p ng-repeat="person in test.people | filter: search | orderBy: 'name' | limitTo: 5">
+    <!-- {{ expression | filter1 | filter2 | ... }} -->
       {{ person.name }}
     </p>
   </div>
