@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example36-production</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body ng-app="customTriggerExample">
+  <div ng-controller="ExampleController">
+  <form>
+    Name:
+    <input type="text" ng-model="user.name" ng-model-options="{ updateOn: 'blur'}"><br />
+    Other Data:
+    <input type="text" ng-model="user.data"><br />
+    Debounced:
+    <input type="text" ng-model="user.debounced" ng-model-options="{ debounce: 500}"><br />
+  </form>
+  <pre>username = "{{user.name}}"</pre>
+  <pre>userdata = "{{user.data}}"</pre>
+  <pre>userbounced = "{{user.debounced}}"</pre>
+</div>
+</body>
+</html>
