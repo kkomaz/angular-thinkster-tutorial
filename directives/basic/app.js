@@ -1,17 +1,17 @@
 var app = angular.module('functionalities', []);
 
 function entering(){
-  return function(scope, element) {
+  return function(scope, element, attrs) {
     element.bind("mouseenter", function(){
-      console.log("Mouse has entered the div");
+      element.addClass(attrs.entering);
     });
   };
 }
 
 function leaving (){
-  return function(scope, element) {
+  return function(scope, element, attrs) {
     element.bind("mouseleave", function(){
-      console.log("Mouse has left the div");
+      element.removeClass(attrs.entering);
     });
   };
 }
