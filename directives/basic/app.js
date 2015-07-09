@@ -15,5 +15,6 @@ function leaving (){
     });
   };
 }
+
 app.directive("leaving", leaving);
 app.directive("entering", entering);
