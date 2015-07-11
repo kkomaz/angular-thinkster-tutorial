@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - Welcome Directive</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="app.js"></script>
+</head>
+<body>
+  <div ng-app="app">
+    <div
+      class="button" 
+      ng-repeat="item in 'somewords'.split('') track by $index"
+      ng-click="$log.debug($event)"
+      >
+      {{$index + 1}}. {{item}}
+      {{ev.pageX}}
+      <!-- where in the x coordinate we are clicking the button -->
+    </div>
+    <br />
+    <div
+      class="button" 
+      ng-repeat="item in 'hello'.split('') track by $index"
+      ng-click="ev = $event"
+      >
+      {{$index + 1}}. {{item}}
+      {{ev.pageX}}
+      <!-- where in the x coordinate we are clicking the button -->
+    </div>
+  </div>
+</body>
+</html>
