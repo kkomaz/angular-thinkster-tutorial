@@ -1,17 +1,20 @@
 var app = angular.module("app", ['ngRoute']);
 
 app.config(function($routeProvider){
-  $routeProvider.when("/:firstName/:middleName/:lastName",
+  $routeProvider.when("/",
   {
-    templateUrl: 'app.html',
-    controller: "AppCtrl",
-    controllerAs: "app"
+    template: "THIS IS THE HOME PAGE"
   })
   .when('/cookies',{
     template: "NOM NOM NOM"
   })
+  .when('/:firstName/:middleName/:lastName',{
+    templateUrl: 'app.html',
+    controller: "AppCtrl",
+    controllerAs: "app"
+  })
   .otherwise({
-    template: "This route isn't set!"
+    redirectTo: "/"
   });
 });
 
