@@ -1,7 +1,7 @@
 var app = angular.module("app", ['ngRoute']);
 
 app.config(function($routeProvider){
-  $routeProvider.when("/",
+  $routeProvider.when("/:firstName/:middleName/:lastName",
   {
     templateUrl: 'app.html',
     controller: "AppCtrl",
@@ -15,9 +15,10 @@ app.config(function($routeProvider){
   });
 });
 
-app.controller('AppCtrl', function (){
+app.controller('AppCtrl', function ($routeParams){
   var self = this;
-  this.message = "The app routing is working!";
+  self.message = $routeParams.firstName + " " + $routeParams.middleName + " " + $routeParams.lastName;
 });
 
 //controller is not responsible for defining routes
+//routeParams - takes into account the dynamic routes
