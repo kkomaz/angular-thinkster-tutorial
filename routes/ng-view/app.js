@@ -5,13 +5,21 @@ app.config(function($routeProvider){
   {
     template: "THIS IS THE HOME PAGE"
   })
-  .when('/cookies',{
-    template: "NOM NOM NOM"
+  .when('/cookies/:cookieType',{
+    redirectTo: function (routeParams, path, search){
+      console.log(routeParams);
+      console.log(path);
+      console.log(search);
+      return "/" + routeParams.cookieType;
+    }
   })
   .when('/:firstName/:middleName/:lastName',{
     templateUrl: 'app.html',
     controller: "AppCtrl",
     controllerAs: "app"
+  })
+  .when('/sugar', {
+    template: 'Sugar Cookie'
   })
   .otherwise({
     redirectTo: "/"
