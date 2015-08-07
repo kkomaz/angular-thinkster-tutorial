@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ngMessages Demo</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+  <!-- load momentJS (required for angular-moment) -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  <!-- load angular-moment -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div class="container" ng-app="timeApp" ng-controller="mainController as main">
+    <div class="jumbotron">
+      <h2>Display Time Relatively in Angular</h2>
+      <p>The time is {{ main.time }}</p>
+    </div>
+    
+    <div class="well">
+      <h2>Relative Time <small>(directive)</small></h2>    
+      <time am-time-ago="main.time" title="{{ main.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"></time>
+    </div>
+    
+    <div class="well">
+      <h2>Date Format <small>(filter)</small></h2>
+      <time title="{{ main.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{ main.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}</time>
+    </div>
+    
+    <div class="well">
+      <h2>Calendar Format <small>(filter)</small></h2>
+      <time title="{{ main.time | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}">{{ main.time | amCalendar }}</time>
+    </div>
+    
+    <p class="text-center">
+      View the <a href="https://scotch.io/tutorials/display-time-relatively-in-angular">tutorial</a> on <a href="https://scotch.io">scotch.io</a>
+    </p>
+  </div>
+</body>
+</html>
+
+<!-- https://github.com/urish/angular-moment -->
+<!-- http://momentjs.com/docs/#/displaying/format/ -->
