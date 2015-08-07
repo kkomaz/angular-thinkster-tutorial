@@ -2,7 +2,11 @@ var app = angular.module('app', []);
 
 function testService($http){
   this.get = function() {
-    return $http.get('http://www.w3schools.com/angular/customers.php');
+    return $http.get('http://test-routes.herokuapp.com/test/hello')
+      .then(function(res) {
+        // return the enveloped data
+        return res.data.message;
+      });
   };
   this.upperCase = function(data) {
     return $http.post('http://test-routes.herokuapp.com/test/uppercase', data);
